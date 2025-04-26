@@ -1,0 +1,506 @@
+/* Padronizando a tela */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+/* Definindo cor de fundo do site */
+body {
+    background-color: #EDEDED;
+}
+
+/* Pré definição de cor para: Titulos e paragrafos */
+h1, h2, h3, h4, h5, h6 {
+    color: #2E2E2E;
+}
+
+p {
+    color: #4F4F4F;
+}
+
+img {
+    border-radius: 5px;
+}
+
+
+/* Inicio de estilização do conteudo */
+header {
+    background-color: #2E2E2E;  /* Fundo escuro */
+    width: 100%;                  /* Ocupa toda a largura da tela*/
+    height: 80px;                 /* Altura fixa */
+    padding: 0 2rem;              /* Espaço lateral interno */
+
+    
+}
+
+
+nav {
+    display: flex;                          /* Ativa o flexbox */
+    align-items: center;                    /* Centraliza os itens verticalmente */
+    justify-content: space-between;         /* Espaça a logo de um lado e os links do outro */
+    height: 100%;                           /* Altura igual ao header */
+}
+
+.logo {
+    width: 60px;            /* Tamanho fixo da imagem */
+    height: auto;
+}
+
+
+.nav-barra-itens {
+    display: flex;              /* Coloca os itens (li) em linha */
+    gap: 30px;                  /* Espaçamento entre cada item */
+    list-style: none;           /* Remove os marcadores da lista */
+    align-items: center;        /* SOLUÇÃO DO MEU PROBLEMA - Deixa TODOS os conteudos alinhados um ao lado do outro */
+}
+
+
+.nav-barra-itens li {
+    display: inline-block;          /* Permite configurar padding/margin */
+    text-transform: uppercase;      /* Deixa o texto em maiúsculas */
+}
+
+.nav-barra-itens a {
+    text-decoration: none;          /* Remove o sublinhado dos links */
+    color: #ffff;
+    transition: all 0.3s ease;      /* Atribuindo a opção de TRANSIÇÃO - HOVER > FOCUS > ACTIVE e todos os outros */
+}
+
+/* Botões especiais (CRIAR CONTA e ENTRAR) */
+.btn-criar-cont,
+.btn-entrar {
+    display: inline-block;             /* Permite configurar padding e aplicar hover */
+    background-color: #B19CD9;      /* Cor roxa clara */
+    border-radius: 10px;              /* Bordas arredondadas */
+    padding: 10px 15px;               /* Espaçamento interno (vertical e horizontal) */
+    transition: 0.3s ease, color 0.3s ease; /* Animação suave ao interagir */
+}
+
+.btn-criar-cont:hover,
+.btn-entrar:hover {
+    transform: scale(1.1);      /* Aumenta levemente o botão */
+    color: #2E2E2E;         /* Muda a cor do texto no hover */
+}
+
+.btn-criar-cont:focus,
+.btn-entrar:focus {
+    color: #2E2E2E;         /* Muda a cor do texto no hover */
+}
+
+.btn-n-click:hover {
+    color: #B19CD9;         /* Muda a cor do texto pra roxo claro */
+}
+
+.btn-n-click:focus {
+    color: #B19CD9;         /* Mantém o mesmo efeito do hover no foco(quando item selecionado) */
+}
+
+
+/* Banner principal */
+.hero {
+    position: relative;
+    background-image: url(../img/banner_2.png); 
+    background-size: cover;
+    background-position: center;
+    height: 80vh;   /* A altura do banner ocupa toda a tela */
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* 30% de opacidade preta */
+    z-index: 1;
+}
+
+.main-container{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 15rem 0
+}
+
+.main-container h1,
+.main-container p {
+    text-align: center;
+    font-weight: bold;
+    color: #ffff;
+    text-shadow: #000 5px 3px 2px;
+}
+
+.main-container h1 {
+    font-size: 55px;
+}
+
+.main-container p {
+    font-size: 35px;
+    padding: 1rem;
+}
+
+/* Serviço */
+.services-container {
+    padding: 10rem 0;
+    background-color: #e5e5e5;
+}
+
+.textos-serviço {
+    text-align: center;
+}
+
+.textos-serviço h3 {
+    font-size: 48px;
+    margin-bottom: 2rem;
+}
+
+.textos-serviço p {
+    font-size: 25px;
+    margin: 0 3rem 2rem 3rem;
+}
+
+.services-container ul {
+    display: flex; /* Colocando os elementos em colunas (um ao lado do outro) */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.services-container li {
+    text-align: center; /* Alinhando todo texto ao centro */
+    list-style: none; /* removendo a caracteristica de lista */
+    padding: 40px 50px;
+}
+
+.servico {
+    background-color: #B19CD9;
+    color: #fff;
+    margin-left: 4rem;
+    border-radius: 10px;
+    transition: all 0.5s ease; /* Animação suave para interações*/
+}
+
+.servico:hover {
+    transform: translateY(-10px); /* Eleva o item no hover*/
+    background-color: #9A7AB7; /* Cor lilás mais escura no hover*/
+}
+
+.fas {  
+    font-size: 40px;    /* aumentando o tamanho dos banners */
+    margin-bottom: 2rem;
+}
+
+.servico h3 {
+    margin-bottom: 1rem;
+}
+
+.servico p {
+    line-height: 30px;
+}
+
+/* Segurança */
+.seguranca {
+    padding: 120px 20px 100px;
+  }
+
+  .seguranca-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 60px 40px 40px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .cubo-wrapper {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 120px;
+  }
+
+  .img_cubo {
+    width: 100%;
+    height: auto;
+  }
+
+/* Conteúdo */
+.conteudo h3 {
+    font-size: 1.8rem;
+    margin: 15px 0;
+    color: #333;
+  }
+
+  .conteudo p {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    color: #666;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .links a {
+    text-decoration: none;
+    color: #B19CD9;
+    background-color: #f3f0ff;
+    padding: 3rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+
+  .links a:hover {
+    background-color: #e9ddff;
+  }
+
+    /* Botão CTA */
+  div .botao-cta a {
+    text-decoration: none;
+  }
+
+.botao-cta a {
+    display: inline-block;
+    background-color: #B19CD9;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .botao-cta a:hover {
+    background-color: #6931c9;
+  }
+
+  /*  Suporte  */
+.suporte-final {
+    width: 97%;
+    margin: 0 auto 45px;
+    text-align: center;
+    padding: 5rem 0 5rem 0;
+    background-color:#1e1e2f;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.suporte-final h2 {
+    color: #fff;
+    font-size: 30px;
+}
+
+.suporte-final p {
+    color: #fff;
+    font-size: 20px;
+    margin: 8px 0px 40px 0px;
+}
+
+.formulario-suporte input,
+.formulario-suporte textarea {
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 3px solid #B19CD9;
+    margin: 0 10px 20px;
+}   
+
+.formulario-suporte textarea {
+    display: block;
+    margin: 15px auto 20px;
+    width: 470px;
+    height: 130px;
+}
+
+button {
+    border: none;
+    display: inline-block;
+    background-color: #B19CD9;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.3s;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #6931c9;
+  }
+
+  button:active {
+    transform: scale(0.9);
+}
+
+/* Rodapé(footer) */
+footer {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin: 100px auto 
+}
+
+
+/* Responsividade */
+
+/* Small Laptops a partir de 1110px (para baixo) */
+@media (max-width: 1110px) {
+    .services-container ul {
+        width: 95%;
+        margin: 0 5px;
+    }
+
+    .services-container li {
+        padding: 35px 25px;
+    }
+
+    .servico {
+        margin-left: 2rem;
+    }
+}
+
+/* tablets a partir de 900px (para baixo) */
+@media (max-width: 900px) {
+    /* Banner inicial */
+    .main-container p {
+        padding: 0.7rem;
+        margin: 0 30px;
+    }
+
+    /* Serviços */
+    .services-container .textos-serviço h3{
+        margin: 0 2rem 1rem 2rem;
+    }
+
+    /* Segurança */
+    .botao-cta {
+        margin-top: 2rem;
+    }
+
+
+
+    /* Suporte final */
+    .suporte-final p {
+        margin: 0 40px;
+        padding: 0.7rem 15px 1.5rem 15px;
+    } 
+
+    button {
+        margin-top: 2rem;
+    }
+}
+
+/* Celular a partir de 576px (para baixo) */
+@media (max-width: 576px) {
+
+    /* Cabeçalho */
+    header {
+        height: 150px;
+    }
+
+    .nav-barra-itens {
+        display: flex;
+        flex-direction: row; /* deixa em linha */
+        align-items: center;
+        justify-content: center; /* centraliza no meio horizontal */
+        flex-wrap: wrap; /* Para quebrar a linha colocando um abaixo do outro*/
+        gap: 15px;
+    }
+
+    /* Banner + textos */
+    .main-container h1 {
+        font-size: 48px;
+        margin: 0 21px;
+    }
+
+    .main-container p {
+        font-size: 35px;
+        margin: 1rem 25px 1rem 25px;
+    }
+
+
+    /* Serviços e vantagens */
+    .services-container .textos-serviço h3 {
+        font-size: 38px;
+        margin: 0 3rem 1.5rem 3rem;
+    }
+
+    .services-container .textos-serviço p {
+        font-size: 20px;
+    }
+
+    .services-container ul {
+        flex-direction: column;
+        width: 92%;
+        margin: 0 auto;
+    }
+
+    .services-container li {
+        width: 95%;
+        max-width: 95%;
+        margin: 0 auto 2rem auto;
+    }
+
+
+    /* Container de SEGURANÇA */
+    .seguranca {
+        padding: 10rem 20px;
+    }
+
+    .seguranca .conteudo h3 {
+        margin: 2rem 0 1.3rem;
+    }
+    
+    .seguranca .conteudo p {
+        font-size: 1.3rem;
+        margin-bottom: 2.4rem;
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+    .botao-cta {
+        margin-top: 2.5rem;
+    }
+
+
+    /* Formulario final */
+    .suporte-final h2 {
+        margin: 0 3rem 0;
+    }
+
+    .suporte-final p {
+        padding-bottom: 1.9rem;
+    }
+
+    .formulario-suporte {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .formulario-suporte textarea {
+        width: 330px;
+    }
+}
